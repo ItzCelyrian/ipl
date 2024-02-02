@@ -1,4 +1,4 @@
--- Code overrides wave strength near cayo every frame
+-- Code overrides wave strength near Cayo every frame
 
 CreateThread(function()
 	while true do
@@ -6,6 +6,8 @@ CreateThread(function()
 		WaterOverrideSetStrength(0.5)
 	end
 end)
+
+-- Code that allows you to use GPS on Cayo
 
 CreateThread(function()
 	Wait(2500)
@@ -28,5 +30,3 @@ CreateThread(function()
 		Wait(5000)
 	end
 end)
-
---SetDeepOceanScaler
