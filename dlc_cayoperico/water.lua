@@ -1,7 +1,9 @@
+-- Code overrides wave strength near cayo every frame
+
 CreateThread(function()
 	while true do
 		Wait(0)
-		Citizen.InvokeNative(WaterOverrideSetStrength, 0.5)
+		WaterOverrideSetStrength(0.5)
 	end
 end)
 
@@ -15,12 +17,12 @@ CreateThread(function()
 		if #(pCoords - islandCoords) < 2000.0 then
 			if not islandLoaded then
 				islandLoaded = true
-				Citizen.InvokeNative(SetAiGlobalPathNodesType, 1)
+				SetAiGlobalPathNodesType(1)
 			end
 		else
 			if islandLoaded then
 				islandLoaded = false
-				Citizen.InvokeNative(SetAiGlobalPathNodesType, 0)
+				SetAiGlobalPathNodesType(0)
 			end
 		end
 		Wait(5000)
