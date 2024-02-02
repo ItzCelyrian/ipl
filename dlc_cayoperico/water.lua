@@ -1,7 +1,7 @@
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		Wait(0)
-		Citizen.InvokeNative(0xC54A08C85AE4D410, 0.5)
+		Citizen.InvokeNative(WaterOverrideSetStrength, 0.5)
 	end
 end)
 
@@ -15,16 +15,16 @@ CreateThread(function()
 		if #(pCoords - islandCoords) < 2000.0 then
 			if not islandLoaded then
 				islandLoaded = true
-				Citizen.InvokeNative(0xF74B1FFA4A15FBEA, 1)
+				Citizen.InvokeNative(SetAiGlobalPathNodesType, 1)
 			end
 		else
 			if islandLoaded then
 				islandLoaded = false
-				Citizen.InvokeNative(0xF74B1FFA4A15FBEA, 0)
+				Citizen.InvokeNative(SetAiGlobalPathNodesType, 0)
 			end
 		end
 		Wait(5000)
 	end
 end)
 
---0xB96B00E976BE977F
+--SetDeepOceanScaler
